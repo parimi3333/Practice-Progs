@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="./update" method="post">
+    {% csrf_token %}
+
+    <table bgcolor="gray">
+       <tr><td>Enter Pid:</td><td><input type="text" name="t1" ></td></tr>
+        <tr><td>Enter Pname:</td><td><input type="text" name="t2" ></td></tr>
+       <tr><td>Enter Role:</td><td><input type="text" name="t3" ></td></tr>
+       <tr><td>Enter Dept:</td><td><input type="text" name="t4" ></td></tr>
+       <tr><td>Enter Salary:</td><td><input type="text" name="t5" ></td></tr>
+        <tr><td colspan="2" align="center"><input type="submit" value="update" ></td></tr>
+    </table>
+</form>
+<a href="./display">display</a>
+<a href="./delete1">delete</a>
+<a href="./insert1">add emp</a>
+
+</body>
+</html>

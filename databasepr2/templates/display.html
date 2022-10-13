@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: cyan;text-align: center">
+<table>
+    <tr><th>Id</th><th>firrst name</th><th>last name</th><th>employe salary</th><th>branch</th><th>birth date</th></tr>
+    {% for i in records %}
+        <tr><td>{{ i.id }}</td>
+        <td>{{ i.fn }}</td>
+        <td>{{ i.ln }}</td>
+        <td>{{ i.es }}</td>
+        <td>{{ i.br }}</td>
+            <td>{{ i.bd }}</td></tr>
+    {% endfor %}
+</table>
+<a href="http://localhost:8000/">home</a>
+</body>
+</html>

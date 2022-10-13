@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#696969">
+<form action="./insert" method="post">
+    {% csrf_token %}
+    <center>
+        <pre>
+            Enter Employee Id              <input type="text" name="t1">
+            Enter Employe First Name       <input type="text" name="t2">
+            Enter Employe Last Name        <input type="text" name="t3">
+            Enter Employe salary           <input type="text" name="t4">
+            Enter Employee Branch          <input type="text" name="t5">
+            Enter Employe Department       <input type="text" name="t6">
+            Enter Employee Project         <input type="text" name="t7">
+
+                       <input type="submit" value="insert">
+
+        </pre>
+    </center>
+</form>
+
+</body>
+</html>

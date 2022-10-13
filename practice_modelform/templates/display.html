@@ -1,0 +1,13 @@
+{% extends 'nav.html' %}
+{% block content %}
+<table aria-colspan="2">
+    <tr><th>employe id</th>
+    <th>name</th>
+    <th>sal</th></tr>
+    {% for i in dis %}
+        <tr>
+        <td>{{ i.eid }}</td><td>{{ i.name }}</td><td>{{ i.sal }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

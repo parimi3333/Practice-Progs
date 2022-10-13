@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="text-align: center">
+    <tr><th>eid</th><th>ename</th><th>erole</th><th>edept</th><th>esal</th></tr>
+    {% for rec in records %}
+    <tr><td>{{ rec.eid}}</td>
+        <td>{{ rec.ename}}</td>
+        <td>{{ rec.erole}}</td>
+        <td>{{ rec.edept}}</td>
+        <td>{{ rec.esal}}</td></tr>
+    {%  endfor %}
+
+</table>
+<a href="./insert1">add emp</a>
+<a href="./delete1">delete</a>
+<a href="./update1">update</a>
+
+</body>
+</html>

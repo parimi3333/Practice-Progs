@@ -1,0 +1,10 @@
+
+{% extends 'nav.html' %}
+{% block content %}
+
+<form action="./submit" method="post">
+    {% csrf_token %}
+    {{ emp_d }}
+    <input type="submit" value="submit">
+</form>{% endblock %}
+

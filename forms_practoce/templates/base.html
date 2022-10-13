@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #body{
+            background-color: dimgrey;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="./display">
+    {% csrf_token %}
+    {% for i in emp_d %}
+        <table>
+        <tr>
+            <td> {{ i.eid }}</td></tr><tr><td>{{ i.name }}</td></tr><tr><td>{{ i.sal }}</td>
+        </tr></table>
+    {% endfor %}
+</form>
+
+</body>
+</html>

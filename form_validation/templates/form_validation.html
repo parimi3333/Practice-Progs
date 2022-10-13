@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .sty{
+            border: none;
+            padding: 0px;
+            border-bottom: 2px solid #b5b5b5;
+            border-radius: 0px;
+            margin-top: 10px;
+        }
+        .head{
+            background-color: blue;
+            text-align: center;
+        }
+        .card{
+        margin-left: 400px;
+        margin-top: 160px;
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body style="text-align: center">
+<h1 class="head" style="background-color: limegreen">IT SOLUTIONS </h1>
+<nav style="text-align: end"><a class="btn btn-primary" href="./">login</a> </nav>
+<div class="card" style="width: 30rem;">
+    <h1 class="head">SignUp form</h1>
+  <div class="card-body">
+<form action="./signup" method="post" id="rform">
+    {% csrf_token %}<br/>
+    <label for="">username</label>
+    <input type="text" name="us" id="us" class="sty" placeholder="username">
+    <span id="user_error"></span><br/>
+    <label for="">password</label>
+    <input type="password" name="p" id="p" class="sty" placeholder="password">
+    <span id="password_error"></span><br/>
+    <label for="">re-enter password</label>
+    <input type="password" name="ro" id="rps" class="sty" placeholder="re-enter password">
+    <span id="repass_error"></span><br/>
+    <input type="submit" value="submit">
+
+<script type="text/javascript">
+$(function (){
+    $('#user_error').hide();
+        $('#password_error').hide();
+$('#repass_error').hide();
+
+var error_username = false;
+var error_password = false;
+var error_repassword = false;
+
+$('#us').focusout(function (){
+    check_username();
+});
+$('#p').focusout(function (){
+    check_password();
+});
+$('#rps').focusout(function (){
+    check_repassword();
+});
+function check_username(){
+    var pattren = /^[a-zA-z]*$/;
+    var username = $('#us').val();
+    if(pattren.test(username) && username != ' '){
+        $('#user_error').hide();
+        $('#us').css('border-bottom','2px solid #34F458');
+    }else {
+        $('#user_erro').html('should contain only charecters');
+        $('#user_error').show();
+        $('#us').css('border-bottom','2px solid #F90A0A');
+        error_username = true;
+    }
+}
+function  check_password(){
+    var password_length = $('#p').val().length;
+    var password = $('#p').val();
+    if(password_length<8){
+        $('#password_error').html('atleast 8 charecters');
+        $('#password_error').show();
+        $('#p').css('border-bottom','2px solid #F90A0A');
+        error_password =true;
+    }else if(password.search(/[a-z]/)==-1){
+        $('#password_error').html('atleast one small charecter');
+        $('#password_error').show();
+        $('#p').css('border-bottom','2px solid #F90A0A');
+        error_password =true;
+
+    }
+    else if(password.search(/[A-Z]/)==-1){
+        $('#password_error').html('atleast one uppercase');
+        $('#password_error').show();
+        $('#p').css('border-bottom','2px solid #F90A0A');
+        error_password =true;
+
+    }else if(password.search(/[!\@\#\$\^\&\*\_\?\+\-\<\>]/)==-1){
+        $('#password_error').html('atleast one special charecter');
+        $('#password_error').show();
+        $('#p').css('border-bottom','2px solid #F90A0A');
+        error_password =true;
+
+    }
+    else if(password.search(/[0-9]/)==-1){
+        $('#password_error').html('atleast one numaric');
+        $('#password_error').show();
+        $('#p').css('border-bottom','2px solid #F90A0A');
+        error_password =true;
+
+    }
+    else {
+        $('#password_error').hide();
+        $('#p').css('border-bottom','2px solid #34F458');
+    }
+}
+function check_repassword(){
+    var password = $('#p').val();
+    var repassword = $('#rps').val();
+    if(password != repassword){
+        $('#repass_error').html('password did not match');
+        $('#repass_error').show();
+        $('#rps').css('border-bottom','2px solid #F90A0A');
+        error_repassword = true;
+    }else {
+        $('#repass_error').hide();
+        $('#rps').css('border-bottom','2px solid #34F458');
+    }
+}$('#rform').submit(function (){
+    error_username = false;
+    error_password = false;
+    error_repassword = false;
+    check_username();
+    check_password();
+    check_repassword();
+    if(error_username==false&&error_password==false&&error_repassword==false){
+        alert('registeration successfull');
+        return true;
+    }else {
+        alert('please fill the form correctly');
+        return false;
+    }
+});
+});
+</script>
+</form></div></div>
+</body>
+</html>

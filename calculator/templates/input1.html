@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:cyan;text-align:center;font-size:50px">
+
+<form method="post" action="./add">
+    {% csrf_token %}
+    enter fno:<input type="text" name="t1"><br/>
+    enter sno:<input type="text" name="t2"><br/>
+    <input type="submit" value="+" name="operation">
+    <input type="submit" value="-" name="operation">
+    <input type="submit" value="*" name="operation">
+    <input type="submit" value="/" name="operation">
+    <input type="submit" value="%" name="operation">
+</form>
+
+
+</body>
+</html>

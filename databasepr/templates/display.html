@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body style="background-color: cyan;text-align: center">
+<center>
+<table style="text-align: center">
+    <tr><th>Employe Id</th><th>EmployeFirst Name</th><th>Employe lastname</th><th>Employe salary</th><th>Employe branch</th><th>Employe department</th>
+    <th>Employe project</th></tr>
+    {% for rec in records %}
+    <tr><td>{{ rec.eid}}</td>
+        <td>{{ rec.efirstname}}</td>
+        <td>{{ rec.elastname}}</td>
+        <td>{{ rec.esal}}</td>
+        <td>{{ rec.ebranch}}</td>
+        <td>{{ rec.edepartment}}</td>
+        <td>{{ rec.eproject}}</td></tr>
+    {%  endfor %}
+
+</table>
+</center>
+</body>
+</html>

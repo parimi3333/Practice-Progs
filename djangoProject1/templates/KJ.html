@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="fab(9)">press</button>
+<p id="demo"></p>
+<form method="post" action="./insert">
+    {% csrf_token %}
+    {{ hii }}
+    <input type="submit" value="insert">
+</form>
+<script>
+    alert("dangerous")
+    function fab(k){
+        var sum=0,i=1,a=0,b=0;
+        while (i<=k){
+            sum=a+b;
+            console.log(sum)
+            a=b;
+
+            if(sum==0){
+                sum+=1;
+            }
+            b=sum;
+            i+=1;
+
+        }
+        return document.getElementById('demo').innerHTML=sum;
+    }
+</script>
+</body>
+</html>

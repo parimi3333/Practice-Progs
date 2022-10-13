@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><pre>
+<form action="./register" method="post">
+    {% csrf_token %}
+First name :     <input type="text" name="Fn" placeholder="First name" required>
+Last name :      <input type="text" name="Ln" placeholder="Last name" required>
+User name :      <input type="text" name="Un" placeholder="user name" required>
+Email-id :       <input type="text" name="eid" placeholder="email-id" required>
+Password :       <input type="text" name="P" placeholder="Password" required>
+
+                 <input type="submit" value="Register">
+
+</form>
+</pre>
+</body>
+</html>

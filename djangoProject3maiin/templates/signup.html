@@ -1,0 +1,68 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="./register">
+    {% csrf_token %}<b>
+    <label for="name">first name</label>
+    <input type="text" name="t4" placeholder="first name" required><br/>
+    <label for="">last name</label>
+    <input type="text" name="t5" placeholder="last name" required><br/>
+    <label for="">user name</label>
+    <input type="text" name="un" id="user" placeholder="username" required>
+    <span id="userm" style="color:red"></span></br>
+    <label for="">emil id</label>
+    <input type="email" name="email" placeholder="email id" required></br>
+    <label for="">password</label>
+    <input type="password" name="password" id="p1" placeholder="password" required>
+    <span id="messages" style="color: red"></span></br>
+    <lablel>re-enter password</lablel>
+    <input type="password" name="p2" id="p2" placeholder="comfirm password" required></br>
+   <center><input type="submit" onclick="return chek()" value="signup"></center> </b>
+<script>
+    function chek(){
+    var pass1 = document.getElementById('p1').value;
+    var pass2 = document.getElementById('p2').value;
+    var x = document.getElementById('user').value;
+        if(pass1.length<8){
+        document.getElementById('messages').innerHTML='password must be more than 8 letters';
+        return false;
+    }
+    else{
+    if(pass1!=pass2){
+        alert('passwords must match')
+        document.getElementById('messages').innerHTML='passwords must match';
+        return false;
+    }
+    else if(pass1.search(/[a-z]/)==-1){
+        document.getElementById('messages').innerHTML='atleast one lowercase is needed';
+        return false;
+    }
+    else if(pass1.search(/[A-Z]/)==-1){
+        document.getElementById('messages').innerHTML='atleast write one uppercase';
+        return false;
+    }
+    else if(pass1.search(/[0-9]/)==-1){
+        document.getElementById('messages').innerHTML='atleast one numaric ';
+        return false;
+    }
+    else if(pass1.search(/[!\@\#\$\^\&\*\_\?\+\-\<\>]/)==-1){
+        document.getElementById('messages').innerHTML='atleast one special charachter';
+        return false;
+    }
+    else if(x[0].toUpperCase()==x[0]){
+        return true;
+    }
+    else if(x[0].toUpperCase() != x[0]){
+        document.getElementById('userm').innerHTML='first letter must be capital';
+        return false;
+        }
+    }
+    }
+</script>
+</form>
+</body>
+</html>

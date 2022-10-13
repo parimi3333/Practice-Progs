@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="./insert" method="post">
+    {% csrf_token %}
+<input type="text" name="pid" placeholder="employeid" required>
+<input type="text" name="name" placeholder="enter name" required>
+<input type="text" name="role" placeholder="designation" required>
+<input type="text" name="dept" placeholder="department" required>
+<input type="text" name="sal" placeholder="salary" required>
+<input type="submit" value="add">
+</form>
+<a href="./display">display</a>
+<a href="./delete1">delete</a>
+<a href="./update1">update</a>
+</body>
+</html>
